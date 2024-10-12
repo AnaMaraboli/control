@@ -173,7 +173,18 @@
             document.getElementById('resultado-controles').innerHTML = resultado;
         }
     </script>
-    <script src="index.js"></script>
 
+<!-- Informe de Resultados -->
+        <div id="informe-resultados" style="display:none;">
+            <h2>Informe de Resultados</h2>
+            <div id="resultados-contenido"></div>
+            <canvas id="grafico"></canvas>
+            <button id="nueva-auditoria" class="btn btn-secondary">Iniciar Nueva Auditoría</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
