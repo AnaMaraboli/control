@@ -1,77 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auditoría COSO</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Evaluación de Controles Internos según COSO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center">Auditoría COSO</h1>
+        <h1 class="text-center">Evaluación Detallada de Controles Internos</h1>
+        
+        <form id="evaluacion-controles">
+            <!-- Entorno de Control -->
+            <h3>1. Entorno de Control</h3>
+            <div class="form-group">
+                <label for="entorno-sub1">a) ¿Existe un código de ética formalmente establecido y difundido?</label>
+                <select class="form-control" id="entorno-sub1">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="entorno-sub2">b) ¿La alta dirección lidera con el ejemplo en términos de integridad?</label>
+                <select class="form-control" id="entorno-sub2">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="entorno-sub3">c) ¿Se establecen sanciones claras ante violaciones éticas?</label>
+                <select class="form-control" id="entorno-sub3">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
 
-        <!-- Verificación de Cumplimiento -->
-        <div id="verificacion-cumplimiento">
-            <form id="cumplimiento-form">
-                <div class="form-group">
-                    <label for="codigo-etica">¿Hay un código de ética?</label>
-                    <select id="codigo-etica" class="form-control">
-                        <option value="no">No</option>
-                        <option value="si">Sí</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="evaluacion-riesgos">¿Se realizó una evaluación de riesgos?</label>
-                    <select id="evaluacion-riesgos" class="form-control">
-                        <option value="no">No</option>
-                        <option value="si">Sí</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Continuar</button>
-            </form>
-        </div>
+            <!-- Evaluación de Riesgos -->
+            <h3>2. Evaluación de Riesgos</h3>
+            <div class="form-group">
+                <label for="riesgo-sub1">a) ¿Se identifican los riesgos de fraude en la organización?</label>
+                <select class="form-control" id="riesgo-sub1">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="riesgo-sub2">b) ¿Existen evaluaciones periódicas de riesgos internos y externos?</label>
+                <select class="form-control" id="riesgo-sub2">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="riesgo-sub3">c) ¿La organización tiene planes de contingencia para mitigar riesgos?</label>
+                <select class="form-control" id="riesgo-sub3">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
 
-        <!-- Formulario de Auditoría COSO -->
-        <div id="auditoria-form" style="display:none;">
-            <form id="coso-form">
-                <h3>Auditoría COSO</h3>
-                <div class="form-group">
-                    <label for="entorno_control_1">Control del Entorno 1:</label>
-                    <select name="entorno_control_1" class="form-control">
-                        <option value="1">No se cumple</option>
-                        <option value="2">Se cumple en bajo grado</option>
-                        <option value="3">Se cumple en grado medio</option>
-                        <option value="4">Se cumple en alto grado</option>
-                        <option value="5">Se cumple plenamente</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="entorno_control_2">Control del Entorno 2:</label>
-                    <select name="entorno_control_2" class="form-control">
-                        <option value="1">No se cumple</option>
-                        <option value="2">Se cumple en bajo grado</option>
-                        <option value="3">Se cumple en grado medio</option>
-                        <option value="4">Se cumple en alto grado</option>
-                        <option value="5">Se cumple plenamente</option>
-                    </select>
-                </div>
-                <!-- Repite para otros componentes como Evaluación de Riesgos, Actividades de Control, etc. -->
-                <button type="submit" class="btn btn-primary">Generar Informe</button>
-            </form>
-        </div>
+            <!-- Actividades de Control -->
+            <h3>3. Actividades de Control</h3>
+            <div class="form-group">
+                <label for="control-sub1">a) ¿Se realizan auditorías internas periódicas?</label>
+                <select class="form-control" id="control-sub1">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="control-sub2">b) ¿Hay procedimientos formales para la aprobación de gastos?</label>
+                <select class="form-control" id="control-sub2">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="control-sub3">c) ¿Los controles son revisados y actualizados regularmente?</label>
+                <select class="form-control" id="control-sub3">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
 
-        <!-- Informe de Resultados -->
-        <div id="informe-resultados" style="display:none;">
-            <h2>Informe de Resultados</h2>
-            <div id="resultados-contenido"></div>
-            <canvas id="grafico"></canvas>
-            <button id="nueva-auditoria" class="btn btn-secondary">Iniciar Nueva Auditoría</button>
-        </div>
+            <!-- Información y Comunicación -->
+            <h3>4. Información y Comunicación</h3>
+            <div class="form-group">
+                <label for="info-sub1">a) ¿Se comunican claramente las políticas y procedimientos a todo el personal?</label>
+                <select class="form-control" id="info-sub1">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="info-sub2">b) ¿Existe un sistema para reportar violaciones o problemas éticos?</label>
+                <select class="form-control" id="info-sub2">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Monitoreo -->
+            <h3>5. Monitoreo</h3>
+            <div class="form-group">
+                <label for="monitoreo-sub1">a) ¿Se evalúan los controles internos con regularidad?</label>
+                <select class="form-control" id="monitoreo-sub1">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="monitoreo-sub2">b) ¿Se toman medidas correctivas cuando se identifican fallas en los controles?</label>
+                <select class="form-control" id="monitoreo-sub2">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="evaluarControles()">Evaluar Controles Internos</button>
+        </form>
+
+        <div id="resultado-controles" class="mt-4"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <script>
+        function evaluarControles() {
+            // Obtenemos las respuestas
+            const respuestas = [
+                document.getElementById('entorno-sub1').value,
+                document.getElementById('entorno-sub2').value,
+                document.getElementById('entorno-sub3').value,
+                document.getElementById('riesgo-sub1').value,
+                document.getElementById('riesgo-sub2').value,
+                document.getElementById('riesgo-sub3').value,
+                document.getElementById('control-sub1').value,
+                document.getElementById('control-sub2').value,
+                document.getElementById('control-sub3').value,
+                document.getElementById('info-sub1').value,
+                document.getElementById('info-sub2').value,
+                document.getElementById('monitoreo-sub1').value,
+                document.getElementById('monitoreo-sub2').value
+            ];
+
+            let controlFaltante = [];
+            let todasRespuestasSi = true;
+
+            respuestas.forEach((respuesta, index) => {
+                if (respuesta !== 'si') {
+                    todasRespuestasSi = false;
+                    controlFaltante.push(index + 1);
+                }
+            });
+
+            let resultado;
+            if (todasRespuestasSi) {
+                resultado = "<div class='alert alert-success'>Todos los controles están en cumplimiento.</div>";
+            } else {
+                resultado = "<div class='alert alert-danger'>Los siguientes controles necesitan atención: " + controlFaltante.join(", ") + "</div>";
+            }
+
+            document.getElementById('resultado-controles').innerHTML = resultado;
+        }
+    </script>
+    <script src="index.js"></script>
+
 </body>
 </html>
