@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría COSO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Auditoría COSO</h1>
+
+        <!-- Verificación de Cumplimiento -->
+        <div id="verificacion-cumplimiento">
+            <form id="cumplimiento-form">
+                <div class="form-group">
+                    <label for="codigo-etica">¿Hay un código de ética?</label>
+                    <select id="codigo-etica" class="form-control">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="evaluacion-riesgos">¿Se realizó una evaluación de riesgos?</label>
+                    <select id="evaluacion-riesgos" class="form-control">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Continuar</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Auditoría COSO -->
+        <div id="auditoria-form" style="display:none;">
+            <form id="coso-form">
+                <h3>Auditoría COSO</h3>
+                <div class="form-group">
+                    <label for="entorno_control_1">Control del Entorno 1:</label>
+                    <select name="entorno_control_1" class="form-control">
+                        <option value="1">No se cumple</option>
+                        <option value="2">Se cumple en bajo grado</option>
+                        <option value="3">Se cumple en grado medio</option>
+                        <option value="4">Se cumple en alto grado</option>
+                        <option value="5">Se cumple plenamente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="entorno_control_2">Control del Entorno 2:</label>
+                    <select name="entorno_control_2" class="form-control">
+                        <option value="1">No se cumple</option>
+                        <option value="2">Se cumple en bajo grado</option>
+                        <option value="3">Se cumple en grado medio</option>
+                        <option value="4">Se cumple en alto grado</option>
+                        <option value="5">Se cumple plenamente</option>
+                    </select>
+                </div>
+                <!-- Repite para otros componentes como Evaluación de Riesgos, Actividades de Control, etc. -->
+                <button type="submit" class="btn btn-primary">Generar Informe</button>
+            </form>
+        </div>
+
+        <!-- Informe de Resultados -->
+        <div id="informe-resultados" style="display:none;">
+            <h2>Informe de Resultados</h2>
+            <div id="resultados-contenido"></div>
+            <canvas id="grafico"></canvas>
+            <button id="nueva-auditoria" class="btn btn-secondary">Iniciar Nueva Auditoría</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
